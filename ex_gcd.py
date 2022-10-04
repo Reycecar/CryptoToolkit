@@ -1,7 +1,9 @@
 """
 @Author Reyce Salisbury
-Extended Euclidean Algorithm program
+Extended Euclidean Algorithm calculator
 9/29/2022
+
+
 """
 import os
 import sys
@@ -27,7 +29,7 @@ def main():
         a = int(sys.argv[1])
         b = int(sys.argv[2])
     except IndexError:
-        print("This program requires at least 2 arguments!")
+        raise(Exception("This program requires at least 2 arguments!"))
 
     gcd, x, y = egcd(a, b)  # use above algorithm
     
