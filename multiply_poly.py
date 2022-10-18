@@ -23,7 +23,7 @@ def main():
     sum = 0
     while (hexpoly_B > 0):
         if (hexpoly_B & 1):
-            sum = sum ^ hexpoly_A  # if last bit of b is 1, add poly_a to the sum
+            sum = sum ^ hexpoly_A  # if last bit of poly_b is 1, add poly_a to the sum
         hexpoly_B = hexpoly_B >> 1  # divide poly_B by 2
         hexpoly_A = hexpoly_A << 1  # multiply poly_A by 2
         if (hexpoly_A & 0x100):  # this is 0x100 because this determines when overflow happens
