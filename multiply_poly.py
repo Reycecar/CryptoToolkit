@@ -17,11 +17,8 @@ Note:   0x11B is the hexadecimal representation of the AES irr. polynomial,
 import sys
 
 def main():
-    hexpoly_A = int("1E", 16)
-    hexpoly_B = int("37", 16)
-
-    #hexpoly_A = int(sys.argv[1], 16)
-    #hexpoly_B = int(sys.argv[2], 16)
+    hexpoly_A = int(sys.argv[1], 16)
+    hexpoly_B = int(sys.argv[2], 16)
 
     sum = 0
     while (hexpoly_B > 0):
@@ -29,7 +26,7 @@ def main():
             sum = sum ^ hexpoly_A  # if last bit of poly_b is 1, add poly_a to the sum
         hexpoly_B = hexpoly_B >> 1  # divide poly_B by 2
         hexpoly_A = hexpoly_A << 1  # multiply poly_A by 2
-        if (hexpoly_A & 0x100):
+        if (hexpoly_A & 0x100):  # if this is true, need to mod poly_a to be in GF(2^8)
             hexpoly_A = hexpoly_A ^ 0x11B  # mod poly_A by the AES irr. poly (0x11B)
 
     print((str(hex(sum))).upper()[2:])
