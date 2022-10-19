@@ -34,16 +34,26 @@ With 1 argument:
 With 2 arguments:
     Shows m^x mod n (where x is 0-n) as well as the order for m in Zn
 ## subCipherInfo.py
-### Get info about a cipherttext that is encrypted with a substitution cipher + caesar cipher cracking
+### Get info about a ciphertext that is encrypted with a substitution cipher + caesar cipher cracking
 
 Information gathering of a ciphertext
 
 Arg 1 can be a file path or a ciphertext.
 
-if argument 1 is a path to a file:
+if argument 1 is a path to a file:  
     subCiperInfo will use the file to build the ciphertext
 
-if arg 1 is ciphertext:
+if arg 1 is ciphertext:  
     subCipherInfo will use the given ciphertext
     
 (you can also run without any arguments, but the program will simply ask you for the ciphertext anyway)
+
+## multiply_poly.py
+### Multiply two polynomials that are represented as 8-bit hexadecimal values within Galois Field 2^8
+
+GF(2^8) uses the AES Irreducable Polynomial (x^8 + x^4 + x^3 + x + 1) 
+(Bitwise, this is 1 0001 1011 or 0x11B)
+Argument 1 is the hexadecimal representation of polynomial A
+Argument 2 is the hexadecimal representation of polynomial B
+
+Program computes A * B in GF(2^8)
