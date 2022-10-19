@@ -1,6 +1,5 @@
 # CryptoToolkit
-Tooling that I have created to help solve cryptograpic equations
-Explanations below
+Explanations for each program below
 ## ex_gcd.py
 ### Extended Euclidean Algorithm Calculator
 Takes in two arguments (a and b) and computes the following:
