@@ -7,9 +7,11 @@ Explanations for each program below
 #### Multiplicative inverse of a (mod b)
 #### Multiplicative inverse of b (mod a)
 #### Calibrated (non-negative) multiplicative inverses
+
 ## gcd.py
-### Greatest Common Divisor calculator
-Takes in two arguments (a and b) and computes the gcd of a and b
+## Greatest Common Divisor calculator
+### Takes in two arguments (a and b) and computes the gcd of a and b
+
 ## lfsr.py
 ## LFSR Calculator
 ### Takes in the exponent values of an LFSR polynomial and responds with  data about the polynomial (not 0 inclusive)
