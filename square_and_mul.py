@@ -61,6 +61,7 @@ def main():
             table = False
         else:
             print("Table Failure: Improper boolean")
+            table = False
     except:
         table = False
     
@@ -71,8 +72,6 @@ def main():
         
         titleStr = (f"| {padding('stp', size, 'center')} |\t| {padding('bit', size, 'center')} |\t| " +
         f"{padding('sqr', size, 'center')} |\t| {padding('mul', size, 'center')} |")
-
-        print("_" * (len(titleStr) + 12))
         print(titleStr)
 
     stepstr = str(bin(b))[2:]
@@ -86,8 +85,6 @@ def main():
         if table:
             print(f"| {padding(i+1, size, 'center')} |\t| {padding(stepstr[i], size, 'center')} |\t|" + 
             f" {padding(sqr, size, 'center')} |\t| {padding(mul, size, 'center')} |")
-    if table:
-        print("=" * (len(titleStr) + 12))
 
     print(f"\n{a}^{b} % {modval} = {final}")
 
