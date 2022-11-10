@@ -13,7 +13,18 @@ Program computes: A**B % C
 """
 import sys
 
-''' '''
+
+# actual algorithm
+def sqAndMul(a, b, mod):
+    stepstr = str(bin(b))[2:]
+    final = 1
+    for i in range(len(stepstr)):
+        final = (final ** 2) % mod
+        if stepstr[i] == '1':
+            final = (final * a) % mod
+    return final
+
+
 def padding(val, size=int, placement='left'):
     '''
     :param: val = any
@@ -49,22 +60,8 @@ def padding(val, size=int, placement='left'):
 
     return val
 
-def main():
-    a = int(sys.argv[1])
-    b = int(sys.argv[2])
-    modval = int(sys.argv[3])
-    try:
-        table = sys.argv[4]
-        if table.capitalize() == "True":
-            table = True
-        elif table.capitalize() == "False":
-            table = False
-        else:
-            print("Table Failure: Improper boolean")
-            table = False
-    except:
-        table = False
-    
+
+def squareAndMultiply(a, b, modval, table):
     if table:
         size = 3
         if len(str(modval)) > 3:
@@ -85,8 +82,27 @@ def main():
         if table:
             print(f"| {padding(i+1, size, 'center')} |\t| {padding(stepstr[i], size, 'center')} |\t|" + 
             f" {padding(sqr, size, 'center')} |\t| {padding(mul, size, 'center')} |")
+    return final
 
-    print(f"\n{a}^{b} % {modval} = {final}")
+def main():
+    a = int(sys.argv[1])
+    b = int(sys.argv[2])
+    modval = int(sys.argv[3])
+    try:
+        table = sys.argv[4]
+        if table.capitalize() == "True":
+            table = True
+        elif table.capitalize() == "False":
+            table = False
+        else:
+            print("Table Failure: Improper boolean")
+            table = False
+    except:
+        table = False
+    
+    ret = squareAndMultiply(a, b, modval, table)
+
+    print(f"\n{a}^{b} % {modval} = {ret}")
 
 
 if __name__ == '__main__':
